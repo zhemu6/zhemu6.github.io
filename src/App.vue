@@ -8,17 +8,31 @@ import NavBar from './components/NavBar.vue'
     <router-view />
     
     <!-- Footer -->
-    <footer class="py-12 text-center text-gray-500 border-t border-gray-800 bg-[#0D1117]">
-      <p class="mb-4">Built with Vue 3, TypeScript & Tailwind CSS</p>
-      <div class="flex justify-center gap-6 text-2xl">
-        <a href="https://github.com/zhemu6" class="hover:text-white transition" title="GitHub">
-          <i class="fab fa-github"></i>
-        </a>
-        <a href="mailto:1137800445@qq.com" class="hover:text-white transition" title="Email">
-          <i class="fas fa-envelope"></i>
-        </a>
+    <footer class="glass relative mt-20">
+      <!-- Gradient Top Border -->
+      <div class="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-transparent via-blue-500/50 to-transparent"></div>
+
+      <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col md:flex-row justify-between items-center gap-6">
+        <!-- Left: Branding -->
+        <div class="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-600 font-sans">
+          Shihao Lu
+        </div>
+
+        <!-- Center: Social Links -->
+        <div class="flex gap-8">
+          <a href="https://github.com/zhemu6" class="group transition-colors duration-300" title="GitHub">
+            <i class="fab fa-github text-2xl text-gray-400 transition-all duration-300 group-hover:text-white group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"></i>
+          </a>
+          <a href="mailto:1137800445@qq.com" class="group transition-colors duration-300" title="Email">
+            <i class="fas fa-envelope text-2xl text-gray-400 transition-all duration-300 group-hover:text-white group-hover:scale-110 group-hover:drop-shadow-[0_0_10px_rgba(255,255,255,0.6)]"></i>
+          </a>
+        </div>
+
+        <!-- Right: Copyright -->
+        <div class="text-gray-500 text-sm font-light">
+          &copy; 2026 Shihao Lu. All rights reserved.
+        </div>
       </div>
-      <p class="mt-8 text-xs text-gray-600">© 2026 Shihao Lu. All rights reserved.</p>
     </footer>
   </div>
 </template>
