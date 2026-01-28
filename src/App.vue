@@ -5,7 +5,12 @@ import NavBar from './components/NavBar.vue'
 <template>
   <div class="min-h-screen bg-[#0D1117] text-[#c9d1d9] font-sans selection:bg-blue-500/30">
     <NavBar />
-    <router-view />
+    
+    <router-view v-slot="{ Component }">
+      <transition name="page-fade" mode="out-in">
+        <component :is="Component" />
+      </transition>
+    </router-view>
     
     <!-- Footer -->
     <footer class="glass relative mt-20">
@@ -43,5 +48,21 @@ import NavBar from './components/NavBar.vue'
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Page Transition Styles */
+.page-fade-enter-active,
+.page-fade-leave-active {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.page-fade-enter-from {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-fade-leave-to {
+  opacity: 0;
+  transform: translateY(-10px);
 }
 </style>
